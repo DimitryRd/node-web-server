@@ -40,7 +40,6 @@ app.get('/', (req, res) => {
         ],
         year: new Date().getFullYear(),
         text: output
-
     })
 });
 
@@ -50,6 +49,15 @@ app.get('/about', (req, res) => {
         currentYear: new Date().getFullYear(),
         text: output
     })
+});
+
+app.get('/projects', (req, res) =>{
+   res.render('projects.hbs',{
+       pageTitle: 'Project list',
+       currentDate: new Date(),
+       text: output,
+       image: "https://www.w3schools.com/images/w3schools_green.jpg"
+   })
 });
 
 app.get('/maintenance', (req, res) => {
